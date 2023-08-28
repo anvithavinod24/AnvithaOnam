@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: rgb(235, 237, 238);
+  }
+
+  .circle-background {
+    position: absolute;
+    top: 100px;
+    left: 700px;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 400px;
+    background-color: rgba(40, 142, 176, 0.2);
+    border-radius: 50%;
+    z-index: -1;
+  }
+  .fancy-text {
+    font-family: 'Cursive', cursive;
+    font-size: 24px;
+    font-weight: bold;
+    color: #FFA500;
+    margin-bottom: 20px;
+  }
+
+  .blob-container {
+    position: relative;
+    width: 350px;
+    height: 150px;
+  }
+
+  .blob {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgb(85, 202, 59), rgb(10, 154, 2));
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    z-index: 5;
+  }
+
+  .center-line {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 3px;
+    width: 100%;
+    background-color: rgb(14, 117, 4);
+    transform-origin: center;
+  }
+
+  .kootan {
+    width: 5%;
+    position: relative; 
+    left: 200px; 
+    top: -120px;
+    height: 20%;
+    background: linear-gradient(135deg, rgb(235, 54, 166), rgb(86, 2, 154));
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    z-index: 5;
+  }
+
+  .banana {
+    position: relative;
+    left: 40px; 
+    top: -130px;
+    width: 25px;
+    height: 80px;
+    background-color: yellow;
+    border-radius: 50% 50% 50% 50% / 80% 80% 60% 60%;
+    transform: rotate(-30deg);
+    z-index: 10;
+    box-shadow: 3px 7px rgba(82, 83, 1, 0.438) inset;
+  }
+
+  .pappadam {
+    width: 70px;
+    height: 70px;
+    background-color: #f7e4b2;
+    border: 1px solid #d6c18c;
+    border-radius: 50%;
+    position: relative;
+    left: 50px; 
+    top: -210px;
+    overflow: hidden;
+  }
+
+  .dot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #d6c18c;
+    border-radius: 50%;
+  }
+
+  .dot.dot1 {
+    top: 20%;
+    left: 30%;
+  }
+
+  .dot.dot2 {
+    top: 40%;
+    left: 65%;
+  }
+
+  .dot.dot3 {
+    top: 70%;
+    left: 25%;
+  }
+
+  .dot.dot4 {
+    top: 80%;
+    left: 60%;
+  }
+
+  .chips {
+    width: 20px;
+    height: 20px;
+    background-color: #e8f227;
+    border: 1px solid #b3be0e;
+    border-radius: 50%;
+    position: absolute;
+    left: 300px;
+    top: 100px;
+    z-index: 5;
+  }
+
+  .dotchip {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 3px;
+    height: 3px;
+    background-color: #d6c18c;
+    border-radius: 50%;
+  }
+
+  .chp.dotchip.c1 {
+    position: relative;
+    top: 100px;
+    left: 100px;
+  }
+
+  .chips.chip2 {
+    left: 120px;
+    top: 50px;
+  }
+
+  .chips.chip3 {
+    left: 130px;
+    top: 40px;
+  }
+  .chips.chip4 {
+    left: 140px;
+    top: 50px;
+  }
+
+  .upperi {
+    position: relative;
+    width: 20px;
+    height: 10px;
+    background-color: #675708;
+    border: 1px solid #8b9411;
+    border-radius: 5px;
+    z-index: 5;
+    transform: rotate(-30deg);
+  }
+
+  .upperi.upperi1 {
+    left: 80px;
+    top: -290px;
+  }
+
+  .upperi.upperi2 {
+    left: 70px;
+    top: -290px;
+  }
+
+  .rice {
+    width: 30%;
+    position: relative; 
+    left: 170px; 
+    top: -270px;
+    height: 35%;
+    background: linear-gradient(135deg, rgb(234, 228, 232), rgb(244, 243, 244));
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    z-index: 5;
+    box-shadow: 2px 4px #888888;
+  }
+
+  .pickle {
+    position: absolute;
+    width: 20px;
+    height: 30px;
+    left: 170px;
+    top: 20px;
+    background-color: #c85d1b;
+    border: 1px solid #9b792f;
+    border-radius: 50%;
+    z-index: 5;
+    transform: rotate(-10deg);
+  }
+
+  .muringikka {
+    position:absolute;
+    left: 250px;
+    top: 35px;
+    width: 30px;
+    height: 5px;
+    transform: rotate(-40deg);
+    background-color: #ecb04f;
+    z-index: 8;
+  }
+
+  .avial {
+    width: 15%;
+    position: relative; 
+    left: 240px; 
+    top: -380px;
+    height: 25%;
+    background: linear-gradient(135deg, rgb(235, 232, 63), rgb(127, 114, 2));
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    z-index: 5;
+  }
+
+
+
+</style>
+<title>ONAM SADYA- Anvitha</title>
+</head>
+<body>
+    <div class="fancy-text">Happy Onam</div>
+    <div class="circle-background"></div>
+  <div class="blob-container">
+    <div class="blob"></div>
+    <div class="center-line"></div>
+    <div class="kootan"></div>
+    <div class="banana"></div>
+    <div class="pappadam">
+      <div class="dot dot1"></div>
+      <div class="dot dot2"></div>
+      <div class="dot dot3"></div>
+      <div class="dot dot4"></div>
+    </div>
+    <div class="chips chip2">
+      <div class="dotchip"></div>
+    </div>
+    <div class="chips chip3">
+      <div class="dotchip"></div>
+    </div>
+    <div class="chips chip4">
+      <div class="dotchip"></div>
+    </div>
+    <div class="upperi upperi1"></div>
+    <div class="upperi upperi2"></div>
+    <div class="rice"></div>
+    <div class="pickle"></div>
+    <div class="muringikka"></div>
+    <div class="avial"></div>
+
+  </div>
+</body>
+</html>
